@@ -13,8 +13,13 @@ for i in range(N):
     while start_idx < end_idx:
         sum = A[start_idx] + A[end_idx]
         if find == sum:
-            count += 1
-            start_idx = end_idx + 1
+            if start_idx != i and end_idx != i:  # 자기 자신이 더해질 경우
+                count += 1
+                break
+            elif start_idx == i:
+                start_idx += 1
+            elif end_idx == i:
+                end_idx -= 1
         elif find < sum:
             end_idx -= 1
         else:
