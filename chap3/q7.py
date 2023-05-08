@@ -6,7 +6,7 @@ M = int(input())
 G = list(map(int, input().split()))
 G.sort()
 
-start_idx = 1
+start_idx = 0
 end_idx = N - 1
 count = 0
 
