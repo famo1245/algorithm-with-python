@@ -3,8 +3,9 @@ import sys
 
 input = sys.stdin.readline
 checkList = [0] * 4
-myList = [0]  * 4
+myList = [0] * 4
 checkValid = 0
+
 
 def addlist(c):
     global checkValid, checkList, myList
