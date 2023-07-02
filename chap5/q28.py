@@ -44,3 +44,4 @@ distance = [0] * (N + 1)
 
 bfs(max_node)
 print(max(distance))
+# 책 참고함
