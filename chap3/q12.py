@@ -1,3 +1,4 @@
+# BOJ 17298
 n = int(input())
 ans = [0] * n
 A = list(map(int, input().split()))
@@ -11,9 +12,5 @@ for i in range(n):
 while myStack:
     ans[myStack.pop()] = -1
 
-result = ""
-
-for i in range(n):
-    result += str(ans[i]) + " "
-
-print(result)
+for i in ans:
+    print(i, end=' ')
