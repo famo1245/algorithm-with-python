@@ -12,6 +12,7 @@ answer = [0] * (N + 1)
 def bfs(v):
     que = deque()
     que.append(v)
+    visited = [False] * (N + 1)
     visited[v] = True
 
     while que:
@@ -29,13 +30,10 @@ for _ in range(M):
     G[S].append(E)
 
 for i in range(1, N + 1):
-    visited = [False] * (N + 1)
-    bfs(i)
+    if G[i]:
+        bfs(i)
 
-maxValue = 0
-for i in range(1, N + 1):
-    maxValue = max(maxValue, answer[i])
-
+maxValue = max(answer)
 for i in range(1, N + 1):
     if maxValue == answer[i]:
         print(i, end=' ')
