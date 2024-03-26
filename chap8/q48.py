@@ -111,9 +111,8 @@ def dfs(node, group):
     for i in G[node]:
         if visited[i] == 0:
             return dfs(i, -group)
-        else:
-            if visited[i] == visited[node]:
-                return False
+        elif visited[i] == visited[node]:
+            return False
     return True
 
 
@@ -127,15 +126,18 @@ for _ in range(k):
         G[a].append(b)
         G[b].append(a)
 
-    flag = True
-    # TODO: 다른 그룹인거 구분하기
+    can_divide = True
+    group = 1
+
     for i in range(1, v + 1):
         if visited[i] == 0:
-            result = dfs(i, 1)
-            if not result and i == 1:
+            result = dfs(i, group)
+            if not result:
                 print("NO")
-                flag = False
+                can_divide = False
                 break
 
-    if flag:
+            group += 1
+
+    if can_divide:
         print("YES")
