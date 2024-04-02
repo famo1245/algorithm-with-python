@@ -1,3 +1,4 @@
+# BOJ 1043
 import sys
 input = sys.stdin.readline
 
