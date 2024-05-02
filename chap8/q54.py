@@ -33,20 +33,37 @@ def find_zero_degree():
 
 
 find_zero_degree()
-time_sum = 0
 while que:
     now = que.popleft()
 
-    if len(que) == 0:
-        time_sum += times[now]
-        result[now] = time_sum
-    else:
-        result[now] = time_sum + times[now]
+    result[now] += times[now]
 
     for node in buildings[now]:
+        result[node] = max(result[now], result[node])
         degree[node] -= 1
 
     find_zero_degree()
 
 for i in range(1, len(result)):
     print(result[i])
+
+# 사용 반례
+# 3
+# 10 -1
+# 4 1 -1
+# 100 -1
+#
+# 6
+# 10 -1
+# 10 1 -1
+# 4 1 -1
+# 4 3 1 -1
+# 3 3 -1
+# 20 -1
+#
+# 5
+# 10 -1
+# 20 1 -1
+# 30 2 -1
+# 40 3 5 -1
+# 100 -1
