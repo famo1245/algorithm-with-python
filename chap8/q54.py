@@ -24,25 +24,21 @@ for i in range(1, N + 1):
 
 que = deque()
 
+for i in range(1, len(degree)):
+    if degree[i] == 0:
+        degree[i] = -1
+        que.append(i)
 
-def find_zero_degree():
-    for i in range(1, len(degree)):
-        if degree[i] == 0:
-            degree[i] = -1
-            que.append(i)
-
-
-find_zero_degree()
 while que:
     now = que.popleft()
-
     result[now] += times[now]
 
     for node in buildings[now]:
         result[node] = max(result[now], result[node])
         degree[node] -= 1
 
-    find_zero_degree()
+        if degree[node] == 0:
+            que.append(node)
 
 for i in range(1, len(result)):
     print(result[i])
