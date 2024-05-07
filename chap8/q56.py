@@ -97,3 +97,13 @@ for i in range(1, V + 1):
         continue
 
     print(distance[i])
+
+# 사용 반례
+# 6 6
+# 1
+# 1 2 1
+# 2 5 1
+# 5 6 1
+# 1 3 10
+# 3 4 5
+# 6 3 1
