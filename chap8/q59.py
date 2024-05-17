@@ -14,7 +14,7 @@ for _ in range(M):
     s, e, w = map(int, input().split())
     routes.append((s, e, w))
 
-for _ in range(1, M):
+for _ in range(N):
     for s, e, w in routes:
         if answer[s] != math.inf and answer[e] > answer[s] + w:
             answer[e] = answer[s] + w
