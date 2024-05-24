@@ -19,15 +19,10 @@
 #
 #
 # def find_min_distance_node():
-#     index_list = []
-#     for i in range(1, len(visited)):
-#         if not visited[i]:
-#             index_list.append(i)
-#
 #     min_distance = math.inf
 #     node_num = -1
 #     for i in index_list:
-#         if distance[i] < min_distance:
+#         if distance[i] < min_distance and not visited[i]:
 #             min_distance = distance[i]
 #             node_num = i
 #
