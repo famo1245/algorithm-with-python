@@ -24,9 +24,7 @@ def convert(e):
 
 
 for i in range(1, N + 1):
-    temp = list(input())
-    # 개행문자 제거
-    temp.pop()
+    temp = list(input().strip())
     line = list(map(convert, temp))
 
     for j in range(N):
