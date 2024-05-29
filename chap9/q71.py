@@ -60,5 +60,5 @@ for _ in range(M + K):
     a, b, c = map(int, input().split())
     if a == 1:
         update(b, c)
-    if a == 2:
+    elif a == 2:
         print_sum(b, c)
