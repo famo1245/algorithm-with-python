@@ -14,7 +14,7 @@ def calc_length():
 
 
 tree_length = calc_length()
-tree = [0] * (tree_length + 1)
+tree = [0] * tree_length
 
 start_index = tree_length // 2
 for i in range(N):
