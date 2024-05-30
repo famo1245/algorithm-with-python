@@ -126,3 +126,11 @@ for _ in range(M + K):
         update(b, c)
     elif a == 2:
         print_mul(b, c)
+
+# 반례
+# 2 1 2
+# 1000000
+# 1000000
+# 2 1 2
+# 1 2 1
+# 2 1 2
