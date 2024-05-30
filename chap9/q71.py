@@ -23,7 +23,7 @@ for i in range(N):
 
 # 세그먼트 트리 초기화
 index = start_index - 1
-while index > 1:
+while index > 0:
     tree[index] = tree[index * 2] + tree[index * 2 + 1]
     index -= 1
 
@@ -33,7 +33,7 @@ def update(index, num):
     tree_index = index + start_index - 1
     difference = num - tree[tree_index]
 
-    while tree_index > 1:
+    while tree_index > 0:
         tree[tree_index] += difference
         tree_index //= 2
 

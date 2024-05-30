@@ -24,7 +24,7 @@ for i in range(N):
     tree[start_index + i] = num
 
 index = start_index - 1
-while index > 1:
+while index > 0:
     tree[index] = min(tree[index * 2], tree[index * 2 + 1])
     index -= 1
 
