@@ -21,12 +21,12 @@
 # # BFS 이용 탐색
 # while que:
 #     now = que.popleft()
+#     now_depth = parent_list[now][1]
 #
 #     for node in tree[now]:
-#         depth = parent_list[now][1]
 #         # parent list 초기화
 #         if parent_list[node] == 0:
-#             parent_list[node] = (now, depth + 1)
+#             parent_list[node] = (now, now_depth + 1)
 #             que.append(node)
 #
 #
@@ -87,13 +87,13 @@ que.append(root)
 # BFS 이용 탐색
 while que:
     now = que.popleft()
+    now_depth = depth[now]
 
     for node in tree[now]:
-        level = depth[now]
         # parent list 초기화
         if parent_list[node] == 0:
             parent_list[node] = now
-            depth[node] = level + 1
+            depth[node] = now_depth + 1
             que.append(node)
 
 
