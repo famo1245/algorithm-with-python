@@ -7,13 +7,13 @@ events = [factorial(N - i) for i in range(N)]
 
 
 def find_index(index):
-    used = [False] * N
+    used = [False] * (N + 1)
     result = []
     digit = N - 1
     while index > events[digit]:
         digit -= 1
 
-    for i in range(digit):
+    for i in range(digit + 1):
         result.append(num_list[i])
         used[num_list[i]] = True
 
@@ -29,5 +29,4 @@ else:
         find_num += str(line[i])
     find_num = int(find_num)
 
-for e in result:
-    print(e)
+print(*result)
