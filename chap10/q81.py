@@ -31,7 +31,7 @@ def find_by_num(num):
             count = 0
             index = 0
             for j in range(len(num_list)):
-                if num[i] > num_list[j]:
+                if num_list[j] < num[i]:
                     count += 1
                 elif num_list[j] == num[i]:
                     index = j
