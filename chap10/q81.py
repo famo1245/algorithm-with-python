@@ -9,9 +9,7 @@ events = [factorial(N - i) for i in range(N)]
 
 def find_by_index(index):
     result = []
-    digit = 0
-
-    while len(result) < N:
+    for digit in range(1, N):
         count = 0
         while index > events[digit] * count:
             count += 1
@@ -19,8 +17,8 @@ def find_by_index(index):
         num = num_list.pop(count - 1)
         result.append(num)
         index = index - (events[digit] * (count - 1))
-        digit += 1
-
+    # 나머지 남은 값 추가
+    result.append(num_list.pop())
     print(*result)
 
 
@@ -28,7 +26,7 @@ def find_by_num(num):
     result = 1
     for i in range(len(num)):
         if num[i] != num_list[0]:
-            count = 0
+            count = 1
             index = 0
             for j in range(len(num_list)):
                 if num_list[j] < num[i]:
@@ -37,7 +35,7 @@ def find_by_num(num):
                     index = j
                     break
 
-            result += count + 1
+            result += events[i + 1] * (count - 1)
             num_list.pop(index)
         else:
             num_list.pop(0)
