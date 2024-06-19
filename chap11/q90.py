@@ -1,4 +1,5 @@
 # BOJ 9252
+# python3 시간 초과
 import sys
 
 input = sys.stdin.readline
