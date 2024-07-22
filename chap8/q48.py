@@ -103,19 +103,19 @@ import sys
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
-k = int(input())
-
 
 def dfs(node, group):
-    visited[node] = group
+    global can_divide
+    if not visited[node]:
+        visited[node] = group
     for i in G[node]:
-        if visited[i] == 0:
-            return dfs(i, -group)
+        if not visited[i]:
+            dfs(i, -group)
         elif visited[i] == visited[node]:
-            return False
-    return True
+            can_divide = False
 
 
+k = int(input())
 for _ in range(k):
     v, e = map(int, input().split())
     G = [[] for _ in range(v + 1)]
@@ -127,17 +127,14 @@ for _ in range(k):
         G[b].append(a)
 
     can_divide = True
-    group = 1
-
     for i in range(1, v + 1):
-        if visited[i] == 0:
-            result = dfs(i, group)
-            if not result:
-                print("NO")
-                can_divide = False
-                break
+        if not visited[i]:
+            dfs(i, 1)
 
-            group += 1
+        if not can_divide:
+            break
 
     if can_divide:
         print("YES")
+    else:
+        print("NO")
